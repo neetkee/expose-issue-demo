@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: test-service
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql:11://hostname:5432/postgres
+    hikari:
+      schema: test_service
+      maximum-pool-size: 2
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    schemas: test_service
